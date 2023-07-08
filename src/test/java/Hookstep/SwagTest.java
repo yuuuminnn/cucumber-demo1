@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class SwagTest {
     WebDriver driver = null;
     @Before
+//    test
     public void setupDriver(){
         System.setProperty("webdriver.http.factory", "jdk-http-client");
         String projectPath = System.getProperty("user.dir");
