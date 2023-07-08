@@ -1,0 +1,111 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2023-07-08T18:28:46.548Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1937886800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hookstep.SwagTest.setupDriver()"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "testSwagLabs",
+        "description": "",
+        "id": "testswaglabs;testswaglabs",
+        "after": [
+          {
+            "result": {
+              "duration": 664435300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hookstep.SwagTest.quitDriver()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 8221942900,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "open url and login",
+            "match": {
+              "location": "Hookstep.SwagTest.open_url_and_login()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 151305400,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "add product to cart",
+            "match": {
+              "location": "Hookstep.SwagTest.addProductToCart()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3117785700,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "go to Cart and Checkout",
+            "match": {
+              "location": "Hookstep.SwagTest.goToCartAndCheckout()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 277868200,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "input rceiving address",
+            "match": {
+              "location": "Hookstep.SwagTest.inputRceivingAddress()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3124290700,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "checkout Overview",
+            "match": {
+              "location": "Hookstep.SwagTest.checkoutOverview()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@aaa"
+          }
+        ]
+      }
+    ],
+    "name": "testSwagLabs",
+    "description": "",
+    "id": "testswaglabs",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Features/SwagLabs.feature",
+    "tags": []
+  }
+]

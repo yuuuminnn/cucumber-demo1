@@ -4,10 +4,8 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.*;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-
 import java.util.concurrent.TimeUnit;
 
 public class SwagTest {
@@ -15,7 +13,8 @@ public class SwagTest {
     @Before
     public void setupDriver(){
         System.setProperty("webdriver.http.factory", "jdk-http-client");
-        System.setProperty("webdriver.chrome.driver", "Y:/cucumber-demo1/src/test/resources/Driver/chromedriver.exe");
+        String projectPath = System.getProperty("user.dir");
+        System.setProperty("webdriver.chrome.driver",projectPath + "/src/test/resources/Driver/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
@@ -40,27 +39,37 @@ public class SwagTest {
 
     @When("add product to cart")
     public void addProductToCart() throws InterruptedException {
-        Thread.sleep(3000);
-        WebElement selector = driver.findElement(By.xpath("//select[@id='0']")); //Selector 表示定位的元素
-        Select select = new Select(selector);
+        Select select = new Select(driver.findElement(By.xpath("//*[@class=\"product_sort_container\"]")));
         select.selectByValue("hilo");
-        driver.findElement(By.xpath("//*[@class=\"product_sort_container\"]")).click();
-        driver.findElement(By.xpath("//*[@name=\"add-to-cart-sauce-labs-fleece-jacket\"]")).click();
+        driver.findElement(By.xpath("//*[@class='btn btn_primary btn_small btn_inventory']")).click();
     }
 
     @And("go to Cart and Checkout")
-    public void goToCartAndCheckout() {
+    public void goToCartAndCheckout() throws InterruptedException {
         driver.findElement(By.xpath("//*[@class=\"shopping_cart_link\"]")).click();
-        if (driver.getPageSource().contains("Your Cart")){
-            driver.findElement(By.xpath("//*[@name=\"checkout\"]")).click();
-        } else {
-            driver.findElement(By.xpath("//*[@class=\"shopping_cart_link\"]")).click();
-        }
+        driver.getPageSource().contains("Your Cart");
+        driver.findElement(By.xpath("//*[@name=\"checkout\"]")).click();
+        Thread.sleep(3000);
     }
 
-    @Then("input rceiving address")
+    @And("input rceiving address")
     public void inputRceivingAddress() {
+        driver.getPageSource().contains("Checkout: Your Information");
+        driver.findElement(By.xpath("//*[@id=\"first-name\"]")).sendKeys("test-addtess1");
+        driver.findElement(By.xpath("//*[@id=\"last-name\"]")).sendKeys("test-addtess2");
+        driver.findElement(By.xpath("//*[@id=\"postal-code\"]")).sendKeys("test-addtess3");
+        driver.findElement(By.xpath("//*[@id=\"continue\"]")).click();
+    }
 
-
+    @Then("checkout Overview")
+    public void checkoutOverview() throws InterruptedException {
+        driver.getPageSource().contains("Checkout: Overview");
+        String AA;
+        AA=driver.findElement(By.xpath("//*[@class=\"summary_info_label summary_total_label\"]")).getText();
+        System.out.println("最终成交价格:"+AA);
+        driver.findElement(By.xpath("//*[@id=\"finish\"]")).click();
+        driver.getPageSource().contains("Thank you for your order!");
+        System.out.println(driver.findElement(By.xpath("//*[@class=\"complete-text\"]")).getText());
+        Thread.sleep(3000);
     }
 }

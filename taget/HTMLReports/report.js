@@ -34,3 +34,40 @@ formatter.step({
 formatter.match({
   "location": "Hookstep.SwagTest.addProductToCart()"
 });
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "go to Cart and Checkout",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Hookstep.SwagTest.goToCartAndCheckout()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "input rceiving address",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Hookstep.SwagTest.inputRceivingAddress()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "checkout Overview",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "Hookstep.SwagTest.checkoutOverview()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+});
