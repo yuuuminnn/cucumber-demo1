@@ -15,7 +15,15 @@ import io.cucumber.java.*;
 //        driver = new ChromeDriver();
 //        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 //        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-//        System.out.println("Before Scenario Complete0");
+//        System.out.println("Before Scenario Complete0");WebDriver driver = null;
+////    @Before(order=0)
+////    public void setupDriver(){
+////        System.setProperty("webdriver.http.factory", "jdk-http-client");
+////        System.setProperty("webdriver.chrome.driver", "Y:/cucumber-demo1/src/test/resources/Driver/chromedriver.exe");
+////        driver = new ChromeDriver();
+////        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+////        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+////        System.out.println("Before Scenario Complete0");
 //    }
 //    @Before(order=1)
 //    public void setDriver2(){

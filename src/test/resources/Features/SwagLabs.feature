@@ -7,3 +7,4 @@ Feature: testSwagLabs
     And go to Cart and Checkout
     And input rceiving address
     Then checkout Overview
+    Then userlogout

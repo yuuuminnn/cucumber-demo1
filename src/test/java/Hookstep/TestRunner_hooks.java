@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
                 "json:taget/JSONReports/regression_report.json",
                 "html:taget/HTMLReports"
         },
-        tags = "@aaa"
+        tags = "@bbb"
 
 )
 public class TestRunner_hooks {

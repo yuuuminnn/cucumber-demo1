@@ -1,4 +1,4 @@
-package Hookstep;
+package StepDefinitions;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -8,10 +8,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import java.util.concurrent.TimeUnit;
 
-public class SwagTest {
+public class SwagTest{
     WebDriver driver = null;
-    @Before
-//    test
+//    @Before
     public void setupDriver(){
         System.setProperty("webdriver.http.factory", "jdk-http-client");
         String projectPath = System.getProperty("user.dir");
@@ -21,7 +20,7 @@ public class SwagTest {
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
     }
 
-    @After
+//    @After
     public void quitDriver(){
         driver.close();
         driver.quit();
@@ -72,5 +71,13 @@ public class SwagTest {
         driver.getPageSource().contains("Thank you for your order!");
         System.out.println(driver.findElement(By.xpath("//*[@class=\"complete-text\"]")).getText());
         Thread.sleep(3000);
+    }
+
+    @Then("userlogout")
+    public void userlogout() throws InterruptedException {
+        driver.findElement(By.xpath("//*[@id=\"react-burger-menu-btn\"]")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id=\"logout_sidebar_link\"]")).click();
+
     }
 }
