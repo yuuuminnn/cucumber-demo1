@@ -1,0 +1,8 @@
+@Findby(id="xxxx")
+@CacheLookup
+WebElement txt_XXXX;
+
+把元素储存在内存里，直接调用，免去重新定位。
+
+@FindBy(hwo=HOW.ID,using='XXX')
+WebElement xx;
