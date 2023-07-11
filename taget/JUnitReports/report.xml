@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="18.136">
-    <testcase classname="testSwagLabs" name="testSwagLabs" time="17.539">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="19.985">
+    <testcase classname="testSwagLabs" name="testSwagLabs" time="19.671">
         <system-out>
             <![CDATA[Given open url and login....................................................passed
 When add product to cart....................................................passed
